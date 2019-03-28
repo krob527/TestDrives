@@ -22,11 +22,11 @@ Login-AzureRmAccount
 
 # Adjust the 'yournamehere' part of these three strings to
 # something unique for you. Leave the last two characters in each.
-$URI       = 'https://raw.githubusercontent.com/GoateePFE/AzureRM/master/active-directory-new-domain-with-data/azuredeploy.json'
-$Location  = 'east us'
-$rgname    = 'yournamehererg'
-$saname    = 'yournameheresa'     # Lowercase required
-$addnsName = 'yournameheread'     # Lowercase required
+$URI       = 'https://raw.githubusercontent.com/krob527/TestDrives.git/azuredeploy.json'
+$Location  = 'east us2'
+$rgname    = 'knr3rg'
+$saname    = 'knr3sa'     # Lowercase required
+$addnsName = 'knr3ad'     # Lowercase required
 
 # Check that the public dns $addnsName is available
 if (Test-AzureRmDnsAvailability -DomainNameLabel $addnsName -Location $Location)
@@ -38,8 +38,8 @@ New-AzureRmResourceGroup -Name $rgname -Location $Location
 # Parameters for the template and configuration
 $MyParams = @{
     newStorageAccountName = $saname
-    location              = 'East US'
-    domainName            = 'alpineskihouse.com'
+    location              = 'East US2'
+    domainName            = 'knr3.mfalab.rtriad.biz'
     addnsName             = $addnsName
    }
 
@@ -48,11 +48,15 @@ $SplatParams = @{
     TemplateUri             = $URI 
     ResourceGroupName       = $rgname 
     TemplateParameterObject = $MyParams
-    Name                    = 'AlpineSkiHouseForest'
+    Name                    = 'RTriadMFALab'
    }
 
 # This takes ~30 minutes
 # One prompt for the domain admin password
+$DebugPreference = "Continue" 
+Test-AzureRmResourceGroupDeployment @SplatParams -Verbose
+$DebugPreference = "SilentlyContinue"
+
 New-AzureRmResourceGroupDeployment @SplatParams -Verbose
 
 # Find the VM IP and FQDN
