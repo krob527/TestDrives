@@ -272,7 +272,7 @@
             "typeHandlerVersion": "2.19",
             "autoUpgradeMinorVersion": true,
             "settings": {
-              "ModulesUrl": "[concat(parameters('_artifactsLocation'), '/DSC/CreateADPDC.zip', parameters('_artifactsLocationSasToken'))]",
+              "ModulesUrl": "[concat(parameters('_artifactsLocation'), 'DSC/CreateADPDC.zip', parameters('_artifactsLocationSasToken'))]",
               "ConfigurationFunction": "CreateADPDC.ps1\\CreateADPDC",
               "Properties": {
                 "DomainName": "[parameters('domainName')]",
