@@ -1,0 +1,9 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AzureMFA",
+    "\\AzureMFA\\DSC"
+  ],
+  "SelectedNode": "\\AzureMFA\\azuredeploy.json",
+  "PreviewInSolutionExplorer": false
+}
