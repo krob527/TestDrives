@@ -4,6 +4,6 @@
     "\\AzureMFA",
     "\\AzureMFA\\DSC"
   ],
-  "SelectedNode": "\\AzureMFA\\azuredeploy.json",
+  "SelectedNode": "\\AzureMFA\\metadata.json",
   "PreviewInSolutionExplorer": false
 }
