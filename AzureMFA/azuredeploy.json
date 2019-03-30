@@ -67,7 +67,7 @@
     "adSubnetAddressPrefix": "10.0.0.0/24",
     "publicIPAddressName": "adPublicIP",
     "adAvailabilitySetName": "adAvailabiltySet",
-    "adModulesURL": "[concat(parameters('_artifactsLocation'),'/DSC/CreateADDomainWithData.ps1.zip')]",
+    "adModulesURL": "https://github.com/krob527/TestDrives/blob/master/AzureMFA/CreateADDomainWithData.ps1.zip",
     "adConfigurationFunction": "CreateADDomainWithData.ps1\\CreateADDomainWithData",
     "adLBName": "adLoadBalancer"
   },
