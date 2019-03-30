@@ -67,7 +67,7 @@
     "adSubnetAddressPrefix": "10.0.0.0/24",
     "publicIPAddressName": "adPublicIP",
     "adAvailabilitySetName": "adAvailabiltySet",
-    "adModulesURL": "[concat(parameters('_artifactsLocation'),'DSC/CreateADDomainWithData.ps1.zip')]",
+    "adModulesURL": "[concat(parameters('_artifactsLocation'),'/DSC/CreateADDomainWithData.ps1.zip')]",
     "adConfigurationFunction": "CreateADDomainWithData.ps1\\CreateADDomainWithData",
     "adLBName": "adLoadBalancer"
   },
@@ -276,7 +276,7 @@
             "typeHandlerVersion": "2.19",
             "autoUpgradeMinorVersion": true,
             "settings": {
-              "ModulesUrl": "https://raw.githubusercontent.com/krob527/TestDrives/master/AzureMFA/DSC/CreateADDomainWithData.ps1.zip",
+              "ModulesUrl": "[variables('adModulesURL')]",
               "ConfigurationFunction": "[variables('adConfigurationFunction')]",
               "Properties": {
                 "DomainName": "[parameters('domainName')]",
